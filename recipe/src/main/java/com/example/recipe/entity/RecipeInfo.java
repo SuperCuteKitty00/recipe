@@ -1,19 +1,17 @@
 package com.example.recipe.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-public class RecipeSubstationInfo {
+@NoArgsConstructor
+public class RecipeInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int RCP_SEQ;
-    private RecipeSubstationInfo() {}
     private String RCP_NM;
     private String RCP_WAY2;
     private String RCP_PAT2;
@@ -36,16 +34,16 @@ public class RecipeSubstationInfo {
     private String MANUAL_IMG11; private String MANUAL_IMG12; private String MANUAL_IMG13; private String MANUAL_IMG14; private String MANUAL_IMG15;
     private String MANUAL_IMG16; private String MANUAL_IMG17; private String MANUAL_IMG18; private String MANUAL_IMG19; private String MANUAL_IMG20;
 
-    public RecipeSubstationInfo(int id, int RCP_SEQ, String RCP_NM, String RCP_WAY2, String RCP_PAT2, String INFO_WGT, String INFO_ENG, String INFO_CAR, String INFO_PRO,
-                                        String INFO_FAT, String INFO_NA, String HASH_TAG, String ATT_FILE_NO_MAIN, String ATT_FILE_NO_MK, String RCP_PARTS_DTLS,
-                                        String MANUAL01, String MANUAL02, String MANUAL03, String MANUAL04, String MANUAL05,
-                                        String MANUAL06, String MANUAL07, String MANUAL08, String MANUAL09, String MANUAL10,
-                                        String MANUAL11, String MANUAL12, String MANUAL13, String MANUAL14, String MANUAL15,
-                                        String MANUAL16, String MANUAL17, String MANUAL18, String MANUAL19, String MANUAL20,
-                                        String MANUAL_IMG01, String MANUAL_IMG02, String MANUAL_IMG03, String MANUAL_IMG04, String MANUAL_IMG05,
-                                        String MANUAL_IMG06, String MANUAL_IMG07, String MANUAL_IMG08, String MANUAL_IMG09, String MANUAL_IMG10,
-                                        String MANUAL_IMG11, String MANUAL_IMG12, String MANUAL_IMG13, String MANUAL_IMG14, String MANUAL_IMG15,
-                                        String MANUAL_IMG16, String MANUAL_IMG17, String MANUAL_IMG18, String MANUAL_IMG19, String MANUAL_IMG20) {
+    public RecipeInfo(int id, int RCP_SEQ, String RCP_NM, String RCP_WAY2, String RCP_PAT2, String INFO_WGT, String INFO_ENG, String INFO_CAR, String INFO_PRO,
+                      String INFO_FAT, String INFO_NA, String HASH_TAG, String ATT_FILE_NO_MAIN, String ATT_FILE_NO_MK, String RCP_PARTS_DTLS,
+                      String MANUAL01, String MANUAL02, String MANUAL03, String MANUAL04, String MANUAL05,
+                      String MANUAL06, String MANUAL07, String MANUAL08, String MANUAL09, String MANUAL10,
+                      String MANUAL11, String MANUAL12, String MANUAL13, String MANUAL14, String MANUAL15,
+                      String MANUAL16, String MANUAL17, String MANUAL18, String MANUAL19, String MANUAL20,
+                      String MANUAL_IMG01, String MANUAL_IMG02, String MANUAL_IMG03, String MANUAL_IMG04, String MANUAL_IMG05,
+                      String MANUAL_IMG06, String MANUAL_IMG07, String MANUAL_IMG08, String MANUAL_IMG09, String MANUAL_IMG10,
+                      String MANUAL_IMG11, String MANUAL_IMG12, String MANUAL_IMG13, String MANUAL_IMG14, String MANUAL_IMG15,
+                      String MANUAL_IMG16, String MANUAL_IMG17, String MANUAL_IMG18, String MANUAL_IMG19, String MANUAL_IMG20) {
 
         this.RCP_SEQ = id;
         this.RCP_SEQ = RCP_SEQ;
