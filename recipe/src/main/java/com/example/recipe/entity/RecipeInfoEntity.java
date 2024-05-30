@@ -9,12 +9,13 @@ import lombok.AllArgsConstructor;
 @Table(name = "RCP_INFO")
 @Data
 @NoArgsConstructor
-//@AllArgsConstructor
-public class RecipeInfo {
+@AllArgsConstructor
+public class RecipeInfoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private int id;
+    private int ID;
     private int RCP_SEQ; //레시피 번호
+
     private String RCP_NM; //레시피 이름
     private String RCP_WAY2; //조리방법 ex)튀김류
     private String RCP_PAT2; //요리종류 ex)반찬
@@ -38,5 +39,6 @@ public class RecipeInfo {
     private String MANUAL_IMG06; private String MANUAL_IMG07; private String MANUAL_IMG08; private String MANUAL_IMG09; private String MANUAL_IMG10;
     private String MANUAL_IMG11; private String MANUAL_IMG12; private String MANUAL_IMG13; private String MANUAL_IMG14; private String MANUAL_IMG15;
     private String MANUAL_IMG16; private String MANUAL_IMG17; private String MANUAL_IMG18; private String MANUAL_IMG19; private String MANUAL_IMG20;
+    private String RCP_NA_TIP; //저감 조리법 TIP
 
 }
