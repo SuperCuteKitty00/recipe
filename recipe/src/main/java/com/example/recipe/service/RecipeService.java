@@ -14,8 +14,10 @@ public class RecipeService {
 
     @Autowired
     private RecipeInfoRepository recipeInfoRepository;
+    String url = "";
 
     private RecipeInfo saveRecipe(RecipeInfo recipeInfo){
+        ObjectMapper objectMapper = new ObjectMapper();
             return recipeInfoRepository.save(recipeInfo);
     }
 

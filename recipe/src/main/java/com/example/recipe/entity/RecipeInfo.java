@@ -24,7 +24,7 @@ public class RecipeInfo {
     private String INFO_PRO; //단백질
     private String INFO_FAT; //지방
     private String INFO_NA; //나트륨
-    private String HASH_TAG; //해시태크
+    private String HASH_TAG; //해시태그
     private String ATT_FILE_NO_MAIN; //이미지경로(소)
     private String ATT_FILE_NO_MK;   //이미지경로(대)
     private String RCP_PARTS_DTLS; //재료정보

@@ -12,6 +12,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="recipe.recipe.main" target="22" />
+      <module name="recipe.recipe.main~1" target="17" />
+      <module name="recipe.recipe.test~1" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
