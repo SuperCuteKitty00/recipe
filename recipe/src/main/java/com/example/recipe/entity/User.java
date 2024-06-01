@@ -10,21 +10,22 @@ import jakarta.persistence.*;
 @Table(name="USER_INFO") //해당 엔티티 클래스와 매핑될 데이터베이스 이름 지정
 @Getter
 @Setter
-@ToString
-@SequenceGenerator(
-    name = "USER_SEQ_GENERATOR",
-    sequenceName = "USER_SEQ", //매핑할 데이터베이스 시퀀스 이름
-    initialValue = 1,
-    allocationSize = 1)
+
 public class User {
-    @Id // 엔티티 클래스의 주요 식별자(PK)
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-//                    generator = "USER_SEQ_GENERATOR")
-    private int userSeq;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "USER_NO")
+    private Long id;  // USER_NuMBER
 
-    @Column(nullable = false, unique = true)
-    private String userId;
+    @Column(name = "USER_NAME" ,unique = true) // unique = true는 유일한 값만 저장할 수 있음
+    private String username;  // 사용자ID
 
-    @Column(nullable = false)
-    private String userName;
+    @Column(name = "USER_NICKNAME" ,unique = true) // unique = true는 유일한 값만 저장할 수 있음
+    private String usernickname;  // 닉네임
+
+    @Column(name = "USER_PWD")
+    private String password;  // 비밀번호
+
+    @Column(name = "USER_EMAIL", unique = true)
+    private String email;  // 이메일
 }

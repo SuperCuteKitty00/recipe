@@ -1,0 +1,228 @@
+<!--서영님이 작성해주신 메인페이지-->
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml">
+<div layout:fragment="content" class="container my-3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리집 냉장고를 부탁해</title>
+</head>
+
+
+<style> 
+     header {
+        width: 100%;
+        height: 20%;
+        background-color: white;
+        display:inline;
+        align-items: center;
+
+        a{
+            color:orange;
+        }
+       
+    }
+
+    .sidenav { 
+
+        color: white;
+        font-size: medium;
+        list-style: none;
+        text-align: center;
+
+        a {
+            text-decoration-line: none;
+            color: white;
+            font-size: medium;
+        }
+
+    }
+    
+    .menuBlock {
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        display: block;
+        width: 120px;
+        height: 40px;
+        list-style: none;
+        margin: 20px 15px 20px 15px;
+        padding: 30px;
+
+    }
+    input[id="menuicon"] { 
+        display: none;
+
+    }
+
+    input[id="menuicon"]+label {
+        display: block;
+        width: 60px;
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    input[id="menuicon"]+label span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-radius: 30px;
+        background: #000;
+        transition: all 3s;
+    }
+
+    input[id="menuicon"]+label span:nth-child(1) {
+        top: 0;
+    }
+
+    input[id="menuicon"]+label span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    input[id="menuicon"]+label span:nth-child(3) {
+        bottom: 0;
+    }
+
+    input[id="menuicon"]:checked+label span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    input[id="menuicon"]:checked+label span:nth-child(2) {
+        opacity: 0;
+    }
+
+    input[id="menuicon"]:checked+label span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+
+    div[class="sidebar"] {
+        width: 250px;
+        height: 100%;
+        background: #222;
+        position: fixed;
+        top: 0;
+        left: -300px;
+        Z-index: 1;
+        transition: all .35s;
+    }
+
+    input[id="menuicon"]:checked+label+div {
+        left: 0;
+    }
+
+    input[id="menuicon"]+label {
+        display: block;
+        width: 60px;
+        height: 50px;
+        position: fixed;
+        left: 10px;
+        top: 20px;
+        transition: all .35s;
+        cursor: pointer;
+    }
+
+    input[id="menuicon"]:checked+label {
+        z-index: 2;
+        left: 300px;
+    }
+
+    #sidebarTitle {
+        color: white;
+    }
+
+    a{
+        text-decoration-line: none;
+    }
+
+    #title{
+        display: inline;
+
+    }
+
+    #login{ 
+        color:rgb(243, 160, 8);
+        text-align: right;
+        margin-right: 30px;
+      
+    }
+
+    input {
+        width: 40%;
+        height: 100%;
+        border-color: black;
+        font-size: 16px;
+    }
+
+
+
+    button{
+        width: 23px;
+        height: 23px;
+    }
+
+
+
+</style>
+<body>
+    <header>
+        <div id="title">
+            <h1 align="center"><a href="http://192.168.0.22:5500/%EC%9A%B0%EB%A6%AC%EC%A7%91%20%EB%83%89%EC%9E%A5%EA%B3%A0%EB%A5%BC%20%EB%B6%80%ED%83%81%ED%95%B4.html">우리집 냉장고를 부탁해</a></h1>
+        </div>
+
+        <div id="login" onclick="login()">
+            <h4>로그인</h4>
+        </div>
+
+        <form id="search-box" action="" method="">
+            <input align="center" id="search-text" type="text" name="" placeholder="재료 또는 레시피를 입력하세요">
+            <button id="search-button" type="submit"></button>
+        </form>
+
+        
+    </header>
+    <aside>
+        <input type="checkbox" id="menuicon">
+        <label for="menuicon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="sidebar" style="z-index: 10;">
+            <div id="sidebarTitle">
+                <h3>메뉴</h3>
+            </div>
+            <div id="mySidenav" class="sidenav" text-decoration-line: none;>
+                <span id="회원정보" class="menuBlock">
+                    <li><a href="">회원정보</a></li>
+                </span>
+                <span id="찜목록" class="menuBlock">
+                    <li><a href="">찜목록</a></li>
+                </span>
+                <span id="메뉴1" class="menuBlock">
+                    <li><a href="">최근 본 레시피</a></li>
+                </span>
+            </div>
+    </aside>
+
+    <script>
+        function login(){
+            let id = prompt("아이디");
+            let password = Number(prompt("비밀번호"));
+
+            if(id === "홍길동" && password === 1234){
+                alert("로그인 되었습니다");
+            }else{
+                alert("아이디 또는 비밀번호가 틀렸습니다");
+            }
+        }
+    </script>
+
+</body>
+</div>
+</html>

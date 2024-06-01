@@ -1,0 +1,67 @@
+
+<nav th:fragment="navbarFragment" class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
+	 xmlns:sec="http://www.w3.org/1999/xhtml">
+	<style>
+		.navbar {
+			display: flex;
+			flex-direction: column;
+			align-items: end;
+		}
+
+		/*<!--우리집 냉장고를 부탁해 센터 배치 -->*/
+		.container-fluid {
+			display: flex;
+			flex-direction: column;
+			align-items: end;
+		}
+
+		.navbar-brand {
+			font-weight: bold;
+			color: orange;
+			margin-bottom: 0.5rem; /* 필요에 따라 여백 조정 */
+			font-size: 32px;
+		}
+
+		/*로그인 회원가입 버튼 우측 상단*/
+		.navbar-collapse {
+			display: flex;
+			justify-content: end;
+			width: 100%;
+		}
+		.navbar-nav {
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+		}
+		/*navbar-toggler 버튼을 웹페이지의 우측 상단, 즉 "로그인" 및 "회원가입" 버튼 위에 배치*/
+		.navbar-toggler {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+
+
+	</style>
+
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/">우리집 냉장고를 부탁해</a>
+		<button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+<!--					sec:authorize="isAnonymous()": 로그인되지 않은 경우에 해당 요소(로그인 링크)가 표시-->
+					<a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+<!--				    sec:authorize="isAuthenticated()": 로그인된 경우에 해당 요소(로그아웃 링크)가 표시	-->
+					<a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+				</li>
+                <!--회원가입 링크 추가-->
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/user/signup}">회원가입</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

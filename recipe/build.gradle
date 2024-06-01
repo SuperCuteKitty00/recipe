@@ -16,23 +16,40 @@ repositories {
 }
 
 dependencies {
-	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
-	runtimeOnly 'com.mysql:mysql-connector-j'
+	// 스프링 부트 스타터
+	implementation 'org.springframework.boot:spring-boot-starter-web'  // 웹 스타터
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'  // JPA 스타터
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'  // Thymeleaf 스타터
+	implementation 'org.springframework.boot:spring-boot-starter-validation'  // Validation 스타터
+	implementation 'org.springframework.boot:spring-boot-starter-security'  // Security 스타터
 
+	// Thymeleaf 추가 기능
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'  // Thymeleaf 레이아웃 다이얼렉트
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'  // Thymeleaf Spring Security 추가 기능
 
-	//DB 드라이버
-//	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-//  implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '19.8.0.0'
+	// Lombok
+	compileOnly 'org.projectlombok:lombok'  // Lombok 컴파일 전용
+	annotationProcessor 'org.projectlombok:lombok'  // Lombok 어노테이션 프로세서
 
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// 테스트
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'  // 스프링 부트 테스트 스타터
+	testImplementation 'org.junit.jupiter:junit-jupiter'  // JUnit 5
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'  // JUnit 플랫폼 런처
 
-	//lombok
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+	// 개발 도구
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'  // 스프링 부트 개발 도구
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// JSON 처리
+	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'  // JSON-심플
+
+	// 데이터베이스 드라이버
+	runtimeOnly 'com.mysql:mysql-connector-j'  // MySQL 커넥터
+
+	// 선택적 Oracle DB 드라이버
+	// implementation 'org.springframework.boot:spring-boot-starter-jdbc'  // JDBC 스타터
+	// implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '19.8.0.0'  // Oracle JDBC 드라이버 (주석 처리됨)
 }
+
 
 tasks.named('test') {
 	useJUnitPlatform()

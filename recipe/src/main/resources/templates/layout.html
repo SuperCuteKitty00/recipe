@@ -1,0 +1,27 @@
+<!--각 템플릿 파일에서 반복되는 내용을 담아 기본 틀이 되는 템플릿 -->
+<!doctype html>
+<html lang="ko" xmlns:layout="">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+	<!-- sbb CSS -->
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+	<title>Hello!</title>
+</head>
+
+<body>
+	<!-- 네비게이션바
+	 navbar.html 템플릿을 타임리프의 th:replace 속성으로 layout.html 템플릿에 포함-->
+	<nav th:replace="~{navbar :: navbarFragment}"></nav>
+	<!-- 기본 템플릿 안에 삽입될 내용 Start -->
+	<th:block layout:fragment="content"></th:block>
+	<!-- 기본 템플릿 안에 삽입될 내용 End -->
+	<!-- Bootstrap JS -->
+	<script th:src="@{/bootstrap.min.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+// 회원 가입 폼 생성
+package com.example.recipe.form;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class UserCreateForm {
+	@Size(min = 3, max = 25)
+	@NotEmpty(message = "사용자ID는 필수항목입니다.")
+	private String username;  // 사용자ID
+
+	@Size(min = 2, max = 25)
+	@NotEmpty(message = "사용자 닉네임은 필수항목입니다.")
+	private String usernickname; // 닉네임
+
+	@NotEmpty(message = "비밀번호는 필수항목입니다.")
+	private String password1; // 비밀번호
+
+	@NotEmpty(message = "비밀번호 확인은 필수항목입니다.")
+	private String password2; // 비밀번호 확인
+
+	@NotEmpty(message = "이메일은 필수항목입니다.")
+	@Email // 해당 속성의 값이 이메일 형식과 일치하는지를 검증
+	private String email;
+}
