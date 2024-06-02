@@ -45,9 +45,9 @@ dependencies {
 	// 데이터베이스 드라이버
 	runtimeOnly 'com.mysql:mysql-connector-j'  // MySQL 커넥터
 
-	// 선택적 Oracle DB 드라이버
+	// Oracle DB 드라이버
 	// implementation 'org.springframework.boot:spring-boot-starter-jdbc'  // JDBC 스타터
-	// implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '19.8.0.0'  // Oracle JDBC 드라이버 (주석 처리됨)
+	// implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '19.8.0.0'  // Oracle JDBC 드라이버
 }
 
 

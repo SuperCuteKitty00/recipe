@@ -7,7 +7,7 @@ import lombok.ToString;
 import jakarta.persistence.*;
 
 @Entity // 엔티티 클래스임을 선언
-@Table(name="USER_INFO") //해당 엔티티 클래스와 매핑될 데이터베이스 이름 지정
+@Table(name="USER") //해당 엔티티 클래스와 매핑될 데이터베이스 이름 지정
 @Getter
 @Setter
 
