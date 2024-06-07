@@ -30,7 +30,7 @@ public class RecipeService {
     public String transformPartsDetails(String rcpPartsDtls) {
         /** 재료 데이터 변환 로직
            예시 데이터: "연두부 75g(3/4모), 칵테일새우 20g(5마리), 달걀 30g(1/2개), 생크림 13g(1큰술), 설탕 5g(1작은술), 무염버터 5g(1작은술) 고명 시금치 10g(3줄기)"
-           변환 후: "연두부, 칵테일새우, 달걀, 생크림, 설탕, 무염버터, 고명 시금치" */
+           변환 후: "연두부, 칵테일새우, 달걀, 생크림, 설탕, 무염버터, 고명 시금치". */
         String transformedPartsDetails = rcpPartsDtls.replaceAll("기준 •  |•필수|<br>|●|-|:|\\.|ml|g|인분|컵|송송 썬|불린 것|줄기부분|삶은것|주재료|주 재료|육수|마른것|양념|다진|부순|뿌리|으깬|데친|두 가지 색|재료|갈은것|다진것|개|적당량|소스|소스소개", "")
                 .replace("로즈마리", "셰프리")
                 .replace("마리", "")
