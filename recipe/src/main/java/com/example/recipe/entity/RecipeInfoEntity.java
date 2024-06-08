@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
 public class RecipeInfoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
+    private int id;
     private int RCP_SEQ; //레시피 번호
 
     private String RCP_NM; //레시피 이름
